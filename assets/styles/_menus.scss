@@ -1,0 +1,301 @@
+/* ## Menus
+--------------------------------------------- */
+
+.menu {
+    width: 100%;
+    font-family: $font-heading;
+    font-weight: $normal;
+    font-size: 2.8rem;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    @include clearfix;
+    @include breakpoint(sm) {
+        font-size: 3rem;
+    }
+}
+
+.menu-item {
+    display: block;
+    padding: 0.5em 0;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    @include transition;
+    &.right {
+        margin-left: auto;
+    }
+    a {
+        text-decoration: none;
+        display: inline-block;
+        color: $white;
+        opacity: 0;
+        margin-left: 1px;
+        transform: translateY(140%);
+        transition: opacity $site-transition, transform $site-transition;
+        .visible & {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.82s;
+        }
+    }
+    a:hover,
+    a:focus,
+    &.current-menu-item>a {
+        color: $light;
+    }
+}
+
+.menu-widget {
+    padding: 2em 0;
+    color: $white;
+    font-family: $font-body;
+    font-size: 1.382rem;
+    line-height: 1.618em;
+    a {
+        font-weight: $bold;
+        display: inline-block;
+    }
+    p {
+        &:first-of-type {
+            margin-top: 1em;
+        }
+        opacity: 0;
+        transform: translateY(140%);
+        transition: opacity $site-transition, transform $site-transition;
+        .visible & {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.82s;
+        }
+    }
+    .alignleft {
+        margin-left: -14px;
+    }
+}
+
+
+/* ## Sub Menus
+--------------------------------------------- */
+
+.sub-menu {
+    display: none;
+    font-size: 1.5rem;
+    @include clearfix;
+    li {
+        width: 100%;
+        &:first-of-type {
+            padding-top: 2em;
+        }
+    }
+    a {
+        padding: 0.2em 1em;
+    }
+    .sub-menu {
+        padding-left: 1em;
+    }
+}
+
+
+/* ## Specific Menus
+--------------------------------------------- */
+
+.nav-primary {
+    width: 100vw;
+    margin: 0;
+    padding: 0 5rem;
+    background-color: $dark;
+    border-top: $site-border;
+    border-bottom: $site-border;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    -webkit-overflow-scrolling: touch;
+    left: 100%;
+    top: 0;
+    height: calc(100% + 1px);
+    width: 36rem;
+    transition: all 0.75s cubic-bezier(0, 1, 0.618, 1);
+    transition-delay: 0.382s;
+    &:after {
+        content: " ";
+        display: block;
+        height: 100%;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        background-color: $dark;
+        width: 100vw;
+        height: 100%;
+        z-index: 0;
+    }
+    .no-js & {
+        width: 100%;
+        position: relative;
+        display: block;
+        .wrap {
+            padding: 0 5%;
+        }
+        .menu-item {
+            display: inline-block;
+            width: auto;
+            margin: 0 0.5em;
+        }
+    }
+    &.visible {
+        left: calc(100vw - 36rem);
+        @include breakpoint(2000px) {
+            left: calc(50vw + 640px - 5rem);
+        }
+    }
+}
+
+.nav-secondary {
+    width: 100%;
+    margin-bottom: 10vw;
+    @include breakpoint(md) {
+        width: 100%;
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+    }
+    .menu {
+        font-family: $font-body;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+    }
+    .sub-menu {
+        display: none !important;
+    }
+    .menu-item {
+        display: inline-block;
+        width: auto;
+        margin: 0 1em;
+        a {
+            transform: none;
+            color: $dark;
+            opacity: 1;
+        }
+    }
+}
+
+
+/* ## Menu Toggles
+--------------------------------------------- */
+
+.menu-toggle {
+    padding: 2.7rem 0;
+    cursor: pointer;
+    background-color: transparent;
+    display: block;
+    position: absolute;
+    top: 2rem;
+    padding: 0;
+    right: 5%;
+    line-height: 0;
+    height: 3rem;
+    width: auto;
+    letter-spacing: -1em;
+    color: transparent;
+    z-index: 999;
+    transition: none;
+    @include breakpoint(sm) {
+        right: 0;
+    }
+    &:hover,
+    &:focus {
+        background: none;
+        outline: none;
+        box-shadow: none;
+        color: transparent;
+    }
+    &.activated {
+        position: fixed;
+        right: 5vw;
+        span,
+        span:before,
+        span:after {
+            background-color: $light;
+        }
+        @include breakpoint(1420px) {
+            right: calc(50vw - 640px);
+        }
+    }
+    span {
+        display: block;
+        position: relative;
+        height: 0.2rem;
+        background: $dark;
+        transition: background 0s 0.4s;
+        width: 2.5rem;
+        margin: 0;
+        border-radius: $site-radius;
+        &::before,
+        &::after {
+            position: absolute;
+            display: block;
+            left: 0;
+            width: 100%;
+            height: 0.2rem;
+            background-color: $dark;
+            border-radius: $site-radius;
+            content: " ";
+        }
+        &::before {
+            top: -0.7rem;
+            transition: top 0.4s 0.4s, transform 0.4s 0s, background-color 0.82s 0.1s;
+        }
+        &::after {
+            bottom: -0.7rem;
+            transition: bottom 0.4s 0.4s, transform 0.4s 0s, background-color 0.82s 0.1s;
+        }
+    }
+    &.activated span {
+        background: none;
+        &::before {
+            top: 0;
+            transform: rotate(135deg);
+            transition: top 0.4s 0s, transform 0.4s 0.4s, background-color 0.82s 0.1s;
+        }
+        &::after {
+            bottom: 0;
+            transform: rotate(-135deg);
+            transition: bottom 0.4s 0s, transform 0.4s 0.4s, background-color 0.82s 0.1s;
+        }
+    }
+}
+
+.sub-menu-toggle {
+    position: absolute;
+    right: 0;
+    top: 1em;
+    background: none;
+    height: 3rem;
+    width: 3rem;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    &:hover,
+    &:focus {
+        background: none;
+        outline: none;
+        &:after {
+            margin: 0;
+            transform: rotate(0);
+        }
+    }
+    &:after {
+        content: "\f489";
+        margin: 0;
+        transform: rotate(0);
+    }
+    &.activated {
+        &:after {
+            content: "\f462";
+            transform: rotate(0);
+        }
+    }
+}

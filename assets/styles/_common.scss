@@ -1,0 +1,203 @@
+/* ## Avatars
+--------------------------------------------- */
+
+.avatar {
+    border-radius: 50%;
+    margin-right: 2rem;
+    float: left;
+    .alignright & {
+        margin-left: 2rem;
+    }
+}
+
+
+/* ## Genesis
+--------------------------------------------- */
+
+.breadcrumb {
+    padding: 1em 7.5vw;
+    background-color: $white;
+    border-bottom: $site-border;
+    font-size: 1.4rem;
+    width: 100%;
+    @include breakpoint(sm) {
+        padding: 1em 6rem
+    }
+    a {
+        text-decoration: underline;
+    }
+}
+
+.after-entry,
+.author-box {
+    margin-bottom: 5%;
+    @include breakpoint(sm) {
+        margin-bottom: 4rem;
+    }
+}
+
+.archive-description {
+    overflow: hidden;
+    position: relative;
+    padding: 25vw 0 0;
+    @include breakpoint(sm) {
+        padding: 20vh 0 0;
+    }
+}
+
+.archive-title {
+    text-align: center;
+    margin-bottom: 5vw;
+    width: 100%;
+    @include breakpoint(sm) {
+        margin-bottom: 10rem;
+    }
+    a {
+        color: $dark;
+        text-decoration: none;
+        font-family: $font-heading;
+        &:hover {
+            color: $accent;
+        }
+    }
+    +p {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        max-width: map-get($breakpoints, sm);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ## Search Form
+--------------------------------------------- */
+
+.search-form {
+    display: block;
+    width: 100%;
+    position: relative;
+    @include clearfix;
+    input[type="search"] {
+        width: 100%;
+    }
+    input[type="submit"] {
+        display: none;
+    }
+    .entry-content & {
+        margin-bottom: 1em;
+    }
+}
+
+
+/* ## Titles
+--------------------------------------------- */
+
+.author-box-title {
+    font-size: 2rem;
+}
+
+
+/* ## WordPress
+--------------------------------------------- */
+
+a {
+    &.aligncenter img {
+        display: block;
+        margin: 0 auto;
+    }
+    &.alignnone {
+        display: inline-block;
+    }
+}
+
+.alignleft {
+    float: left;
+    text-align: left;
+}
+
+.alignright {
+    float: right;
+    text-align: right;
+}
+
+a {
+    &.alignleft,
+    &.alignnone,
+    &.alignright {
+        max-width: 100%;
+    }
+}
+
+img.centered,
+.aligncenter {
+    display: block;
+    margin: 0 auto 1em;
+}
+
+img.alignnone,
+.alignnone {
+    margin-bottom: 1em;
+}
+
+a.alignleft,
+img.alignleft,
+.wp-caption.alignleft {
+    margin: 0 1em 1em 0;
+}
+
+a.alignright,
+img.alignright,
+.wp-caption.alignright {
+    margin: 0 0 1em 1em;
+}
+
+.wp-caption-text {
+    font-size: 1.4rem;
+    margin: 0;
+    text-align: center;
+}
+
+.entry-content {
+    p.wp-caption-text {
+        margin-bottom: 0;
+    }
+    .wp-audio-shortcode,
+    .wp-playlist,
+    .wp-video {
+        margin: 0 0 1em;
+    }
+}
+
+.sticky,
+.bypostauthor {
+    background-color: transparent;
+}
+
+.post-edit-link {
+    opacity: 0;
+    position: absolute;
+}
+
+/* ## Pricing Table
+--------------------------------------------- */
+
+.pricing-table {
+    @include clearfix;
+    > div {
+        background-color: $white;
+        border: $site-border;
+        margin: 0 -1px $margin-left;
+        padding: 4rem;
+    }
+    .one-half {
+        width: 50%;
+    }
+    .one-third {
+        width: 33.3333333333%;
+    }
+    .one-fourth {
+        width: 25%;
+    }
+}

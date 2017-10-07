@@ -1,0 +1,51 @@
+{
+  "name": "minimize",
+  "version": "2.1.0",
+  "description": "The Minimize theme for the Genesis Framework.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "autoprefixer": "^6.3.1",
+    "browser-sync": "*",
+    "css-mqpacker": "*",
+    "fs": "0.0.1-security",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-cached": "*",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssbeautify": "^0.1.3",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-filter": "*",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-notify": "*",
+    "gulp-pixrem": "^1.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.3.0",
+    "gulp-rename": "*",
+    "gulp-replace": "^0.5.4",
+    "gulp-s3-publish": "^2.0.0",
+    "gulp-sass": "*",
+    "gulp-sort": "^1.1.1",
+    "gulp-sourcemaps": "*",
+    "gulp-uglify": "*",
+    "gulp-wp-pot": "^1.1.1",
+    "gulp-zip": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"No test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seothemes/minimize"
+  },
+  "keywords": [
+    "theme"
+  ],
+  "author": "SeoThemes",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/seothemes/minimize/issues"
+  },
+  "homepage": "https://github.com/seothemes/minimize"
+}

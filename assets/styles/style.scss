@@ -1,0 +1,89 @@
+/*!
+ * Theme Name:       Minimize
+ * Theme URI:        http://www.seothemes.com/themes/minimize/
+ * Description:      Starter theme for the Genesis Framework.
+ * Author:           SEO Themes
+ * Author URI:       http://www.seothemes.com/
+ * Version:          0.1.0
+ * Text Domain:      minimize
+ * Tags: one-column, accessibility-ready, custom-logo, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready.
+ * Template:         genesis
+ * Template Version: 2.5.2
+ * License:          GPL-2.0+
+ * License URI:      http://www.gnu.org/licenses/gpl-2.0.html
+ * GitHub Theme URI: https://github.com/seothemes/minimize
+ */
+
+/* # Table of Contents
+
+- Utilities
+	- Variables
+	- Mixins
+	- Functions
+- Reset
+	- Baseline Normalize
+	- Box Sizing
+	- Float Clearing
+- Defaults
+	- Typography
+	- Headings
+	- Forms
+	- Objects
+	- Tables
+	- Accessibility
+- Layout
+	- Site Containers
+	- Content Width
+	- Column Classes
+	- Gallery
+- Common
+	- Avatars
+	- Genesis
+	- Search Form
+	- Titles
+	- WordPress
+- Header
+	- Before Header
+	- Site Header
+	- Title Area
+	- Widget Area
+	- Hero Section
+- Menus
+	- Menus
+	- Sub Menus
+	- Specific Menus
+	- Menu Toggles
+- Content
+	- Entries
+	- Entry Meta
+	- Pagination
+	- Comments
+- Sidebars
+	- Widgets
+	- Sidebars
+- Footer
+	- Site Footer
+	- Footer Widgets
+- Plugins
+	- Simple Social Icons
+	- Gravity Forms
+- Home
+	- Front Page
+	- Custom Header
+- Print
+	- Print Styles
+*/
+
+@import 'utilities';
+@import 'reset';
+@import 'defaults';
+@import 'layout';
+@import 'common';
+@import 'header';
+@import 'menus';
+@import 'content';
+@import 'sidebars';
+@import 'footer';
+@import 'plugins';
+@import 'home';
+@import 'print';

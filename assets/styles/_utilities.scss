@@ -1,0 +1,123 @@
+/* # Variables
+-----------------------------------------------------------------------*/
+
+/**
+ * ### Breakpoints
+ * 
+ * Based on the most common 16:9 screen resolutions.
+ * @link https://pacoup.com/2011/06/12/list-of-true-169-resolutions/
+ */
+
+$breakpoints: (
+	xs: 512px,
+	sm: 768px,
+	md: 896px,
+	lg: 1152px,
+	xl: 1280px
+);
+
+/* ### Colors */
+
+$dark:  #111111;
+$accent:#aaaaaa;
+$border:#cccccc;
+$light: #f5f5f5;
+$white: #ffffff;
+
+/* ### Typography */
+
+$font-heading: 'Playfair Display', Helvetica, Arial, sans-serif;
+$font-body:    'Open Sans', Helvetica, Arial, sans-serif;
+$normal:  	   300;
+$bolder:  	   400;
+$bold:    	   600;
+
+/* ### Other */
+
+$site-radius:     0.1rem;
+$site-border:     0.1rem solid $border;
+$site-transition: .55s cubic-bezier(.75,0,.175,1);
+
+/* ### Column widths */
+
+$margin-left:   2.564102564102564%;
+$one-half :     48.717948717948715%;
+$one-third:     31.623931623931625%;
+$one-fourth:    23.076923076923077%;
+$one-fifth:     17.9487179487179488%;
+$one-sixth:     14.52991452991453%;
+$two-thirds:    65.81196581196582%;
+$two-fifths:    38.4615384615384616%;
+$three-fourths: 74.35897435897436%;
+$three-fifths:  58.9743589743589744%;
+$four-fifths:   79.4871794871794872%;
+$five-sixths:   82.90598290598291%;
+
+/* # Mixins
+-----------------------------------------------------------------------*/
+
+/* ### Media Queries */
+
+@mixin breakpoint( $breakpoint ) {
+
+    @if map-has-key( $breakpoints, $breakpoint ) {
+
+        @media ( min-width: #{ map-get( $breakpoints, $breakpoint ) } ) {
+            @content;
+        }
+
+    } @else if type_of( $breakpoint ) == number and unit( $breakpoint ) == px or unit( $breakpoint ) == em or unit( $breakpoint ) == rem {
+
+        @media (min-width: $breakpoint ) {
+            @content;
+        }
+
+    } @else {
+
+        @warn "No value could be retrieved from `#{$breakpoint}`. "
+              + "Please make sure it is defined in `$breakpoints` map, or it is a valid number with supported unit of px, em or rem.";
+    }
+}
+
+/* ### Clearfix */
+
+@mixin clearfix {
+	clear: both;
+	&:before,
+	&:after {
+		clear: both;
+		display: block;
+		content: '';
+	}
+}
+
+/* ### Transitions */
+
+@mixin transition {
+	-webkit-transition: all $site-transition;
+	-moz-transition: all $site-transition;
+	-o-transition: all $site-transition;
+	transition: all $site-transition;
+}
+
+
+/* ### Center */
+
+@mixin center {
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+/* ### Screen Reader Text */
+
+@mixin screen-reader-text {
+	position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    height: 0.1rem;
+    width: 0.1rem;
+    border: 0;
+    overflow: hidden;
+}

@@ -1,0 +1,56 @@
+/* ## Front Page
+--------------------------------------------- */
+
+.home {
+	.entry-header {
+		padding-top: calc(20vw + 9rem);
+		padding-bottom: 20vw;
+		@include breakpoint(sm) {
+			padding-top: calc(20vh + 9rem);
+			padding-bottom: 20vh;
+		}
+	}
+	.display-posts-listing {
+		position: relative;
+		@include breakpoint(lg) {
+			width: 140%;
+			left: -20%;
+		}
+    }
+}
+
+
+/* ## Custom Header
+--------------------------------------------- */
+
+.wp-custom-header {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	img,
+	video,
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		width: auto;
+		height: auto;
+		min-height: 100%;
+		min-width: 100%;
+		max-width: 100%;
+		max-height: none;
+		object-fit: cover;
+	}
+	iframe {
+		left: -25%;
+		right: -25%;
+		height: 150%;
+		width: 150%;
+	}
+}
