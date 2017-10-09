@@ -334,7 +334,7 @@ gulp.task( 'i18n', function() {
  */
 gulp.task( 'zip', function() {
 
-	gulp.src( [ './**/*', '!./node_modules/', '!./node_modules/**' ] )
+	gulp.src( [ './**/*', '!./node_modules/', '!./node_modules/**', '!./aws.json' ] )
 	.pipe( zip( __dirname.split( "/" ).pop() + '.zip' ) )
 	.pipe( gulp.dest( '../' ) );
 

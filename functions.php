@@ -20,6 +20,9 @@ define( 'CHILD_THEME_VERSION', '0.1.0' );
 // Set Localization (do not remove).
 load_child_theme_textdomain( 'minimize', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'minimize' ) );
 
+// Force full-width-content layout for all pages.
+add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+
 // Remove secondary sidebar.
 unregister_sidebar( 'sidebar-alt' );
 
