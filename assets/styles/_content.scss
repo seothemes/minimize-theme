@@ -2,221 +2,255 @@
 --------------------------------------------- */
 
 .entry {
-    margin-bottom: 5vw;
-    @include breakpoint(sm) {
-        margin-bottom: 4rem;
-    }
-    &:last-of-type {
-        margin-bottom: 0;
-    }
-    .archive-description ~ &.portfolio {
-        display: inline-block;
-        float: left;
-        clear: none;
-    }
+	margin-bottom: 5vw;
+
+	@include breakpoint(sm) {
+		margin-bottom: 4rem;
+	}
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+
+	.archive-description ~ &.portfolio {
+		display: inline-block;
+		float: left;
+		clear: none;
+	}
 }
 
 .featured-image {
-    margin-bottom: 3em;
-    display: block;
+	display: block;
+	margin-bottom: 3em;
 }
 
 /* ## Entry Header
 --------------------------------------------- */
 
 .entry-header {
-    padding: 10vw 0 0;
-    overflow: hidden;
-    position: relative;
-    @include breakpoint(sm) {
-        padding: 5vh 0 0;
-    }
-    .page &,
-    .single & {
-        padding: 25vw 0 0;
-        text-align: center;
-        @include breakpoint(sm) {
-            padding: 20vh 0 0;
-        }
-    }
-    .home & {
-        text-align: center;
-    }
+	overflow: hidden;
+	position: relative;
+	padding: 10vw 0 0;
+
+	@include breakpoint(sm) {
+		padding: 5vh 0 0;
+	}
+
+	.page &,
+	.single & {
+		padding: 25vw 0 0;
+		text-align: center;
+
+		@include breakpoint(sm) {
+			padding: 20vh 0 0;
+		}
+	}
+
+	.home & {
+		text-align: center;
+	}
 }
 
 .entry-title {
-    width: 100%;
-    .error404 & {
-        padding: 25vw 0 0;
-        text-align: center;
-        @include breakpoint(sm) {
-            padding: 20vh 0 0;
-        }
-    }
-    a {
-        color: $dark;
-        text-decoration: none;
-        font-family: $font-heading;
-        &:hover {
-            color: $accent;
-        }
-    }
-    +p {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: map-get($breakpoints, sm);
-        margin-left: auto;
-        margin-right: auto;
-        .home &,
-        .single &,
-        .page & {
-            text-align: center;
-            justify-content: center;
-        }
-    }
+	width: 100%;
+
+	.error404 & {
+		padding: 25vw 0 0;
+		text-align: center;
+
+		@include breakpoint(sm) {
+			padding: 20vh 0 0;
+		}
+	}
+
+	a {
+		color: $dark;
+		font-family: $font-heading;
+		text-decoration: none;
+
+		&:hover {
+			color: $accent;
+		}
+	}
+
+	+ p {
+		display: flex;
+		max-width: map-get($breakpoints, sm);
+		margin-right: auto;
+		margin-left: auto;
+		flex-wrap: wrap;
+
+		.home &,
+		.single &,
+		.page & {
+			text-align: center;
+			justify-content: center;
+		}
+	}
 }
 
 .letter {
-    font-family: $font-heading;
-    font-size: 80rem;
-    line-height: 0;
-    text-align: left;
-    letter-spacing: -1em;
-    position: absolute;
-    top: 0.25em;
-    left: -0.1em;
-    opacity: 0.02;
-    z-index: -1;
-    @include breakpoint(xs) {
-        font-size: 100rem;
-    }
-    @include breakpoint(md) {
-        font-size: 120rem;
-    }
-    @include breakpoint(xl) {
-        font-size: 140rem;
-    }
+	position: absolute;
+	z-index: -1;
+	top: 0.25em;
+	left: -0.1em;
+	opacity: 0.02;
+	font-family: $font-heading;
+	font-size: 80rem;
+	line-height: 0;
+	text-align: left;
+	letter-spacing: -1em;
+
+	@include breakpoint(xs) {
+		font-size: 100rem;
+	}
+
+	@include breakpoint(md) {
+		font-size: 120rem;
+	}
+
+	@include breakpoint(xl) {
+		font-size: 140rem;
+	}
 }
 
 /* ## Entry Content
 --------------------------------------------- */
 
 .entry-content {
-    padding: 0;
-    @include clearfix;
-    .page &,
-    .single & {
-        padding: 5vh 0;
-    }
-    ol,
-    ul {
-        margin-bottom: 1em;
-        margin-left: 4rem;
-    }
-    ol>li {
-        list-style-type: decimal;
-    }
-    ul>li {
-        list-style-type: disc;
-    }
-    ol ol,
-    ul ul {
-        margin-bottom: 0;
-    }
-    li li {
-        list-style-type: circle;
-    }
-    code {
-        background-color: $light;
-        display: block;
-        padding: 1rem 2rem;
-        border: $site-border;
-        margin-top: 1em;
-    }
-    >*:last-child {
-        margin-bottom: 0;
-    }
+	padding: 0;
+
+	@include clearfix;
+
+	.page &,
+	.single & {
+		padding: 5vh 0;
+	}
+
+	ol,
+	ul {
+		margin-bottom: 1em;
+		margin-left: 4rem;
+	}
+
+	ol > li {
+		list-style-type: decimal;
+	}
+
+	ul > li {
+		list-style-type: disc;
+	}
+
+	ol ol,
+	ul ul {
+		margin-bottom: 0;
+	}
+
+	li li {
+		list-style-type: circle;
+	}
+
+	code {
+		display: block;
+		margin-top: 1em;
+		padding: 1rem 2rem;
+		border: $site-border;
+		background-color: $light;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
 }
 
 .entry-image-link {
-    display: block;
-    margin-bottom: 1em;
-    img {
-        display: block;
-    }
-}
+	display: block;
+	margin-bottom: 1em;
 
+	img {
+		display: block;
+	}
+}
 
 /* ## Entry Meta
 --------------------------------------------- */
 
 p.entry-meta {
-    font-size: 1.6rem;
-    margin-bottom: 0;
-    .entry-header & {
-        margin-bottom: 1em;
-    }
-    a {
-        margin: 0 0 0 1rem;
-    }
+	margin-bottom: 0;
+	font-size: 1.6rem;
+
+	.entry-header & {
+		margin-bottom: 1em;
+	}
+
+	a {
+		margin: 0 0 0 1rem;
+	}
 }
 
 .entry-categories,
 .entry-tags {
-    display: block;
+	display: block;
 }
 
 .entry-author-name {
-    text-transform: capitalize;
+	text-transform: capitalize;
 }
 
-.entry-footer {}
-
+.entry-footer {
+}
 
 /* ## Pagination
 --------------------------------------------- */
 
 .pagination {
-    margin: 5vw 0;
-    @include clearfix;
-    @include breakpoint(md) {
-        margin: 4rem 0 0;
-    }
+	margin: 5vw 0;
+
+	@include clearfix;
+
+	@include breakpoint(md) {
+		margin: 4rem 0 0;
+	}
 }
 
 .adjacent-entry-pagination {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .archive-pagination {
-    padding-top: 5rem;
-    @include breakpoint(sm) {
-        padding: 10rem 0;
-    }
-    ul {
-        display: flex;
-    }
-    li {
-        margin: 0 0.25em 0 0;
-    }
-    a {
-        color: $accent;
-        font-size: 1.6rem;
-        padding: 0;
-        border-radius: $site-radius;
-        text-decoration: none;
-        display: block;
-        margin: 0 0.25rem;
-        background: transparent;
-        @include transition;
-    }
-    a:hover,
-    .active a {
-        color: $dark;
-        text-decoration: underline;
-    }
-}
+	padding-top: 5rem;
 
+	@include breakpoint(sm) {
+		padding: 10rem 0;
+	}
+
+	ul {
+		display: flex;
+	}
+
+	li {
+		margin: 0 0.25em 0 0;
+	}
+
+	a {
+		display: block;
+		margin: 0 0.25rem;
+		padding: 0;
+		border-radius: $site-radius;
+		color: $accent;
+		background: transparent;
+		font-size: 1.6rem;
+		text-decoration: none;
+
+		@include transition;
+	}
+
+	a:hover,
+	.active a {
+		color: $dark;
+		text-decoration: underline;
+	}
+}
 
 /* ## Comments
 --------------------------------------------- */
@@ -224,86 +258,100 @@ p.entry-meta {
 .comment-respond,
 .entry-comments,
 .entry-pings {
-    font-size: 1.6rem;
-    padding: 7.5vw 0;
-    @include breakpoint(sm) {
-        padding: 6rem 0;
-    }
+	padding: 7.5vw 0;
+	font-size: 1.6rem;
+
+	@include breakpoint(sm) {
+		padding: 6rem 0;
+	}
 }
 
 .comment-respond {
-    .form-submit {
-        margin-bottom: 0;
-    }
+
+	.form-submit {
+		margin-bottom: 0;
+	}
 }
 
 .comment-list {
-    li {
-        padding: 4rem 0 0 5vw;
-    }
-    .depth-1 {
-        padding-left: 0;
-    }
-    .comment-respond {
-        padding: 0 0 0 1em;
-    }
-    >.comment-respond {
-        padding: 0;
-    }
+
+	li {
+		padding: 4rem 0 0 5vw;
+	}
+
+	.depth-1 {
+		padding-left: 0;
+	}
+
+	.comment-respond {
+		padding: 0 0 0 1em;
+	}
+
+	> .comment-respond {
+		padding: 0;
+	}
 }
 
 .comment-header {
-    margin-bottom: 5vw;
-    @include breakpoint(sm) {
-        margin-bottom: 2em;
-    }
-    p {
-        margin-bottom: 0;
-    }
+	margin-bottom: 5vw;
+
+	@include breakpoint(sm) {
+		margin-bottom: 2em;
+	}
+
+	p {
+		margin-bottom: 0;
+	}
 }
 
 .comment-edit-link {
-    padding-left: calc(4.8rem + 1em);
-    .entry-pings & {
-        padding: 0;
-        clear: both;
-        display: block;
-    }
+	padding-left: calc(4.8rem + 1em);
+
+	.entry-pings & {
+		display: block;
+		clear: both;
+		padding: 0;
+	}
 }
 
 .comment-meta {
-    padding-left: calc(4.8rem + 1em);
-    word-break: break-all;
-    .entry-pings & {
-        padding: 0 0 1em;
-    }
+	padding-left: calc(4.8rem + 1em);
+	word-break: break-all;
+
+	.entry-pings & {
+		padding: 0 0 1em;
+	}
 }
 
 .comment-content {
-    clear: both;
-    ul>li {
-        list-style-type: disc;
-    }
+	clear: both;
+
+	ul > li {
+		list-style-type: disc;
+	}
 }
 
 .comment-respond {
-    input[type="email"],
-    input[type="text"],
-    input[type="url"] {
-        @include breakpoint(xl) {
-            width: 50%;
-        }
-        label {
-            display: block;
-            margin-right: 1rem;
-        }
-    }
+
+	input[type="email"],
+	input[type="text"],
+	input[type="url"] {
+
+		@include breakpoint(xl) {
+			width: 50%;
+		}
+
+		label {
+			display: block;
+			margin-right: 1rem;
+		}
+	}
 }
 
 .entry-pings .reply {
-    display: none;
+	display: none;
 }
 
 .pingback:last-of-type p {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }

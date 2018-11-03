@@ -2,103 +2,125 @@
 --------------------------------------------- */
 
 .display-posts-listing {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto !important;
-    .listing-item {
-        position: relative;
-        list-style-type: none;
-        margin-bottom: 6vw;
-        box-shadow: 0 1rem 0rem -1rem rgba($dark,0);
-        @include transition;
-        @include clearfix;
-        @include breakpoint(sm) {
-            margin-bottom: $margin-left;
-        }
-        &:before {
-            position: absolute;
-            background-color: rgba($dark,0);
-            z-index: 1;
-            pointer-events: none;
-            @include transition;
-            @include center;
-        }
-        &:hover,
-        &:focus {
-            box-shadow: 0 2rem 2rem -1rem rgba($dark,0.2);
-            &:before {
-                background-color: rgba($dark,0.82);
-            }
-            .title {
-                opacity: 1;
-                transform: translateY(20%);
-                transition-delay: 0.25s;
-            }
-            .category-display {
-                a {
-                    opacity: 1;
-                    transform: translateY(-220%);
-                    transition-delay: 0.25s;
-                }
-            }
-        }
-    }
-    .image {
-        display: block;
-        position: relative;
-        overflow: hidden;
-    }
-    img {
-        @include transition;
-    }
-    .fade-in {
-        display: block;
-        position: absolute;
-        text-align: center;
-        line-height: 1;
-        height: 1.4em;
-        z-index: 2;
-        color: $white;
-        font-size: 2.6rem;
-        overflow: hidden;
-        font-family: $font-heading;
-        @include center;
-        @include transition;
-    }
-    .title {
-        position: absolute;
-        transform: translateY(110%);
-        color: $white;
-        text-decoration: none;
-        -webkit-font-smoothing: antialiased;
-        opacity: 0;
-        transition-delay: 0.25s;
-        @include transition;
-        @include center;
-    }
-    .category-display {
-        position: absolute;
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 1rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1;
-        pointer-events: none;
-        @include center;
-        span {
-            display: none;
-        }
-        a {
-            text-decoration: none;
-            margin: 0 0.5em;
-            color: $light;
-            opacity: 0;
-            transition-delay: 0.25s;
-            transform: translateY(-100%);
-            @include transition;
-        }
-    }
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto !important;
+
+	.listing-item {
+		position: relative;
+		margin-bottom: 6vw;
+		box-shadow: 0 1rem 0 -1rem rgba($dark, 0);
+		list-style-type: none;
+
+		@include transition;
+		@include clearfix;
+
+		@include breakpoint(sm) {
+			margin-bottom: $margin-left;
+		}
+
+		&:before {
+			position: absolute;
+			z-index: 1;
+			background-color: rgba($dark, 0);
+			pointer-events: none;
+
+			@include transition;
+			@include center;
+		}
+
+		&:hover,
+		&:focus {
+			box-shadow: 0 2rem 2rem -1rem rgba($dark, 0.2);
+
+			&:before {
+				background-color: rgba($dark, 0.82);
+			}
+
+			.title {
+				opacity: 1;
+				transition-delay: 0.25s;
+				transform: translateY(20%);
+			}
+
+			.category-display {
+
+				a {
+					opacity: 1;
+					transition-delay: 0.25s;
+					transform: translateY(-220%);
+				}
+			}
+		}
+	}
+
+	.image {
+		display: block;
+		overflow: hidden;
+		position: relative;
+	}
+
+	img {
+
+		@include transition;
+	}
+
+	.fade-in {
+		display: block;
+		overflow: hidden;
+		position: absolute;
+		z-index: 2;
+		height: 1.4em;
+		color: $white;
+		font-family: $font-heading;
+		font-size: 2.6rem;
+		line-height: 1;
+		text-align: center;
+
+		@include center;
+		@include transition;
+	}
+
+	.title {
+		position: absolute;
+		opacity: 0;
+		color: $white;
+		text-decoration: none;
+		transition-delay: 0.25s;
+		transform: translateY(110%);
+		-webkit-font-smoothing: antialiased;
+
+		@include transition;
+		@include center;
+	}
+
+	.category-display {
+		display: flex;
+		position: absolute;
+		z-index: 1;
+		font-size: 1rem;
+		text-align: center;
+		text-transform: uppercase;
+		pointer-events: none;
+		justify-content: center;
+		align-items: center;
+
+		@include center;
+
+		span {
+			display: none;
+		}
+
+		a {
+			margin: 0 0.5em;
+			opacity: 0;
+			color: $light;
+			text-decoration: none;
+			transition-delay: 0.25s;
+			transform: translateY(-100%);
+
+			@include transition;
+		}
+	}
 }
 

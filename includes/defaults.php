@@ -1,19 +1,19 @@
 <?php
 /**
- * This file registers the required plugins for the Minimize theme.
+ * Minimize Theme
  *
- * @package      Minimize
+ * This file updates default settings for child theme and plugins.
+ *
+ * @package      SeoThemes\Minimize
  * @link         https://seothemes.com/themes/minimize
  * @author       SEO Themes
- * @copyright    Copyright © 2017 SEO Themes
- * @license      GPL-2.0+
+ * @copyright    Copyright © 2018 SEO Themes
+ * @license      GPL-3.0-or-later
  */
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-
 	die;
-
 }
 
 add_filter( 'genesis_theme_settings_defaults', 'minimize_theme_defaults' );
@@ -21,10 +21,10 @@ add_filter( 'genesis_theme_settings_defaults', 'minimize_theme_defaults' );
  * Update Theme Settings upon reset.
  *
  * @param  array $defaults Default theme settings.
+ *
  * @return array Custom theme settings.
  */
 function minimize_theme_defaults( $defaults ) {
-
 	$defaults['blog_cat_num']              = 6;
 	$defaults['content_archive']           = 'excerpt';
 	$defaults['content_archive_limit']     = 300;
@@ -35,7 +35,6 @@ function minimize_theme_defaults( $defaults ) {
 	$defaults['site_layout']               = 'full-width-content';
 
 	return $defaults;
-
 }
 
 add_action( 'after_switch_theme', 'minimize_theme_setting_defaults' );
@@ -45,9 +44,7 @@ add_action( 'after_switch_theme', 'minimize_theme_setting_defaults' );
  * @return void
  */
 function minimize_theme_setting_defaults() {
-
 	if ( function_exists( 'genesis_update_settings' ) ) {
-
 		genesis_update_settings( array(
 			'blog_cat_num'              => 6,
 			'content_archive'           => 'excerpt',
@@ -61,18 +58,17 @@ function minimize_theme_setting_defaults() {
 	}
 
 	update_option( 'posts_per_page', 8 );
-
 }
 
 add_filter( 'simple_social_default_styles', 'minimize_social_default_styles' );
 /**
- * Starter Pro Simple Social Icon Defaults.
-
+ * Simple Social Icon Defaults.
+ *
  * @param  array $defaults Default Simple Social Icons settings.
+ *
  * @return array Custom settings.
  */
 function minimize_social_default_styles( $defaults ) {
-
 	$args = array(
 		'alignment'              => 'alignleft',
 		'background_color'       => '#eeeeee',
@@ -85,18 +81,11 @@ function minimize_social_default_styles( $defaults ) {
 		'icon_color_hover'       => '#ffffff',
 		'size'                   => 40,
 		'new_window'             => 1,
-		'facebook'               => '#',
-		'gplus'                  => '#',
-		'instagram'              => '#',
-		'dribbble'               => '#',
-		'twitter'                => '#',
-		'youtube'                => '#',
 	);
 
 	$args = wp_parse_args( $args, $defaults );
 
 	return $args;
-
 }
 
 add_action( 'after_switch_theme', 'minimize_excerpt_metabox' );
@@ -126,12 +115,9 @@ function minimize_excerpt_metabox() {
 
 	// Loop through each post type and update user meta.
 	foreach ( $post_types as $post_type ) {
-
-		// Create variables.
 		$meta_key   = 'metaboxhidden_' . $post_type;
 		$prev_value = get_user_meta( $user_id, $meta_key, true );
 
-		// Check if value is an array.
 		if ( ! is_array( $prev_value ) ) {
 			$prev_value = array(
 				'genesis_inpost_seo_box',
@@ -144,9 +130,6 @@ function minimize_excerpt_metabox() {
 				'genesis_inpost_scripts_box',
 			);
 		}
-
-		// Empty array to prevent errors.
-		$meta_value = array();
 
 		// Remove excerpt from array.
 		$meta_value = array_diff( $prev_value, array( 'postexcerpt' ) );

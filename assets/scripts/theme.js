@@ -4,6 +4,8 @@
 
 ( function ( document, $ ) {
 
+	'use strict';
+
 	$( document ).ready(function () {
 
 		// Add large letter to title.
@@ -16,7 +18,6 @@
 	$( window ).scroll( function () {
 
 		var scroll = $( window ).scrollTop();
-		var height = $( '.hero-section' ).outerHeight();
 		var header = $( '.site-header' ).outerHeight();
 		if (scroll >= header) {
 			$( '.site-header' ).addClass( 'shrink' );

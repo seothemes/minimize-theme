@@ -2,60 +2,65 @@
 --------------------------------------------- */
 
 .site-header {
-    position: absolute;
-    width: 100%;
-    z-index: 100;
-    border-color: $white;
-    @include transition;
-    >.wrap {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        @include breakpoint(md) {
-            padding: 0;
-            flex-wrap: nowrap;
-        }
-    }
-}
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	border-color: $white;
 
+	@include transition;
+
+	> .wrap {
+		display: flex;
+		position: relative;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		@include breakpoint(md) {
+			padding: 0;
+			flex-wrap: nowrap;
+		}
+	}
+}
 
 /* ## Title Area
 --------------------------------------------- */
 
 .title-area {
-    margin: 0 auto 0 0;
-    position: relative;
-    height: 100%;
-    display: block;
-    flex: 1;
-    padding: 1.382em 0;
-    max-width: 18rem;
-    @include breakpoint(md) {
-        max-width: 24rem;
-    }
+	display: block;
+	position: relative;
+	max-width: 18rem;
+	height: 100%;
+	margin: 0 auto 0 0;
+	padding: 1.382em 0;
+	flex: 1;
+
+	@include breakpoint(md) {
+		max-width: 24rem;
+	}
 }
 
 .site-title {
-    font-size: 2.2rem;
-    font-family: $font-heading;
-    line-height: 1;
-    margin-bottom: 0.382em;
-    a {
-        color: $dark;
-        text-decoration: none;
-    }
+	margin-bottom: 0.382em;
+	font-family: $font-heading;
+	font-size: 2.2rem;
+	line-height: 1;
+
+	a {
+		color: $dark;
+		text-decoration: none;
+	}
 }
 
 .site-description {
-    font-size: 1.2rem;
-    margin-bottom: 0;
-    line-height: 1;
-    text-indent: -9999px;
-    position: absolute;
-    @include breakpoint(md) {
-        text-align: left;
-        line-height: 1.382;
-    }
+	position: absolute;
+	margin-bottom: 0;
+	font-size: 1.2rem;
+	line-height: 1;
+	text-indent: -9999px;
+
+	@include breakpoint(md) {
+		line-height: 1.382;
+		text-align: left;
+	}
 }

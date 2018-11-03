@@ -4,7 +4,7 @@
  * @author StudioPress
  * @link https://github.com/copyblogger/responsive-menus
  * @version 1.1.3
- * @license GPL-2.0+
+ * @license GPL-3.0-or-later
  */
 
 ( function ( document, $, undefined ) {

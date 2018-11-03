@@ -8,35 +8,40 @@
  *
  * @package Minimize
  * @author  SeoThemes
- * @license GPL-2.0+
+ * @license GPL-3.0-or-later
  * @link    https://seothemes.com/themes/minimize
  */
 
+add_filter( 'body_class', 'minimize_add_body_class' );
 /**
  * Add landing page body class to the head.
  *
+ * @since 1.0.0
+ *
  * @param  array $classes Array of body classes.
+ *
  * @return array $classes Array of body classes.
  */
 function minimize_add_body_class( $classes ) {
-
 	$classes[] = 'landing-page';
 
 	return $classes;
-
 }
-add_filter( 'body_class', 'minimize_add_body_class' );
 
-// Remove Skip Links.
-remove_action( 'genesis_before_header', 'genesis_skip_links', 5 );
-
+add_action( 'wp_enqueue_scripts', 'minimize_dequeue_skip_links' );
 /**
  * Dequeue Skip Links Script.
+ *
+ * @since 1.0.0
+ *
+ * @return void
  */
 function minimize_dequeue_skip_links() {
 	wp_dequeue_script( 'skip-links' );
 }
-add_action( 'wp_enqueue_scripts', 'minimize_dequeue_skip_links' );
+
+// Remove Skip Links.
+remove_action( 'genesis_before_header', 'genesis_skip_links', 5 );
 
 // Force full width content layout.
 add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
